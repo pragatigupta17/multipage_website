@@ -30,6 +30,9 @@ nav ul li a {
   text-decoration: none;
   text-align: center;
 }
+nav ul li a:hover {
+  color:green;
+}
 .best img {
   width: 100%;
   height: 100%;
