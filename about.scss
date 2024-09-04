@@ -1,0 +1,290 @@
+// Variables
+$primary-color: #069308;
+$secondary-color: gray;
+$font-family: Arial, sans-serif;
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 1024px;
+
+// Mixins
+@mixin grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+
+}
+
+@mixin mobile-only {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin tablet-and-mobile {
+  @media (max-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+// General Styles
+body {
+  font-family: $font-family;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+// Navigation Styles
+nav {
+  background-color: $primary-color;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  img {
+    max-width: 100px;
+  }
+
+  ul {
+    display: flex;
+    gap: 1rem;
+
+    li {
+      padding: 0 0.5rem;
+    }
+  }
+
+  label {
+    display: none;
+    cursor: pointer;
+  }
+
+  // Media Query for Mobile Devices
+  @include mobile-only {
+    ul {
+      flex-direction: column;
+      display: none;
+      width: 100%;
+      background-color: $primary-color;
+    }
+
+    ul.active {
+      display: flex;
+    }
+
+    label {
+      display: block;
+    }
+  }
+}
+
+// About Section
+.about {
+  padding: 2rem;
+  text-align: center;
+
+  .aboutus {
+    margin-bottom: 1rem;
+
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  .basillef img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+// Store Section
+.store {
+  padding: 2rem;
+  text-align: center;
+
+  .product {
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+// Image Section
+.image {
+  padding: 1rem;
+  text-align: center;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+// Rating Section
+.rating {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .review-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    .review-card {
+      background-color: white;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 400px;
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      i {
+        color: orange;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+
+      .reviewer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+
+        img {
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+        }
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+
+    .button {
+      margin-top: 1rem;
+      text-align: center;
+
+      a {
+        display: inline-block;
+        background-color: $primary-color;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 0.3rem;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: darken($primary-color, 10%);
+        }
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+// Footer Section
+.footer {
+  background-color: white;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+
+  .footerimg img {
+    max-width: 100px;
+  }
+
+  .pera,
+  .quicklinks,
+  .sitelinks,
+  .mobileapp {
+    padding: 1rem;
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+
+    ul {
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  .google img {
+    max-width: 100px;
+  }
+
+  // Media Query for Mobile Devices
+  @include mobile-only {
+    grid-template-columns: 1fr;
+
+    .pera,
+    .quicklinks,
+    .sitelinks,
+    .mobileapp {
+      text-align: center;
+    }
+
+    .google img {
+      margin: 0 auto;
+    }
+  }
+}
+
+// Copyright Section
+.copyright {
+  background-color: $secondary-color;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+
+  .social {
+    margin-top: 0.5rem;
+
+    a {
+      margin: 0 0.5rem;
+      i {
+        color: white;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

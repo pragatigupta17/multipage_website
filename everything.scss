@@ -1,27 +1,68 @@
-// Variables
-$background-color: #f5f3eb;
-$white-color: #fff;
-$text-color: #555;
-$primary-color: #79b662;
-$secondary-color: #c3e1af;
-$box-shadow-color: rgba(0, 0, 0, 0.1);
-$font-family: Arial, sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  // variable
+$primary-color: #069308; // Green color
+$secondary-color: #333; // Dark text color
+$light-color: #fff;
+$gray-color: gray;
 
-// Mixin for flexbox
-@mixin flex-center($direction: row, $justify: center, $align: center) {
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $align;
-}
-
-// Base styles
+// General Styles
 body {
-    font-family: $font-family;
-    background-color: $background-color;
-    padding: 20px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+// Header & Navigation
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 30px;
+  background-color: $light-color;
+  font-size: larger;
+
+  img {
+    height: 80px;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+
+    li {
+      a {
+        color: $secondary-color;
+        font-weight: 50px;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+
+  label {
+    display: none; // For mobile menu icon, will display in mobile
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
+  
+
+//filter box
 .filter-container {
     width: 300px;
     background-color: $white-color;
@@ -62,7 +103,6 @@ body {
         input[type="range"] {
             width: 100%;
             margin-bottom: 10px;
-            -webkit-appearance: none;
             height: 6px;
             background: $secondary-color;
             border-radius: 5px;
@@ -78,7 +118,7 @@ body {
                 border-radius: 50%;
             }
         }
-        cards {
+        .cards {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
             gap: 20px;
@@ -105,8 +145,8 @@ body {
             font-size: 1em;
             color: $text-color;
 
-            span {
-                // Optional: Add styles for individual spans if needed
+             
+                
             }
         }
     }
@@ -124,4 +164,148 @@ body {
             }
         }
     }
+
+a {
+  text-decoration: none;
+  color:black;
 }
+
+// Cards
+.cardprice, .productrating {
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+
+  .card {
+    background-color: $white-color;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 1rem;
+    padding: 1rem;
+    max-width: 200px;
+    text-align: center;
+
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+
+    p {
+      color: $primary-color;
+      font-weight: bold;
+    }
+
+    .rating {
+      display: flex;
+      justify-content: center;
+      margin: 0.5rem 0;
+
+      i {
+        color: $secondary-color;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+// Home and Shop Section
+.home {
+  text-align: center;
+  padding: 2rem;
+
+  h2, h1 {
+    color: $primary-color;
+  }
+}
+
+// Footer
+.footer {
+  background-color: #333;
+  color: $white-color;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  img {
+    height: 50px;
+  }
+
+  .pera, .quicklinks, .sitelinks, .mobileapp {
+    max-width: 200px;
+    margin: 1rem 0;
+
+    h1 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+
+    ul {
+      list-style: none;
+
+      li {
+        margin: 0.5rem 0;
+
+        a {
+          color: $white-color;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .google img {
+      max-width: 100px;
+    }
+  }
+}
+
+// Copyright Section
+.copyright {
+  background-color: #222;
+  color: $secondary-color;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+
+  .social {
+    margin-top: 1rem;
+
+    a {
+      margin: 0 0.5rem;
+
+      i {
+        font-size: 1.2rem;
+        transition: color 0.3s;
+
+        &:hover {
+          color: $white-color;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+     ul {
+        display: none;
+      }
+  
+      label {
+        display: block;
+      }
+    }
+   

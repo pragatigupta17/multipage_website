@@ -1,1 +1,273 @@
-/*# sourceMappingURL=groceries.css.map */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  background-color: #069308;
+  padding: 1rem;
+}
+nav img {
+  max-width: 100px;
+}
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+nav ul li {
+  padding: 0 1rem;
+}
+nav label {
+  cursor: pointer;
+  display: none;
+}
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    display: none;
+    background-color: #069308;
+    width: 100%;
+  }
+  nav ul.active {
+    display: flex;
+  }
+  nav label {
+    display: block;
+  }
+}
+
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: white;
+  margin: 1rem 0;
+}
+.filter-container .search-bar input {
+  padding: 0.5rem;
+  width: 200px;
+}
+.filter-container .search-bar button {
+  padding: 0.5rem;
+  background-color: #069308;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.filter-container .price-filter h2 {
+  margin-bottom: 0.5rem;
+}
+.filter-container .price-filter input[type=range] {
+  width: 100%;
+}
+.filter-container .price-filter .price-values {
+  display: flex;
+  justify-content: space-between;
+}
+.filter-container .categories a {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 1024px) {
+  .filter-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .filter-container .search-bar,
+  .filter-container .price-filter,
+  .filter-container .categories {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+.cardprice {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 1rem;
+}
+.cardprice .card {
+  background-color: white;
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 200px;
+}
+.cardprice .card img {
+  max-width: 100%;
+  height: auto;
+}
+.cardprice .card h2 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+.cardprice .card p {
+  font-size: 1rem;
+  color: #069308;
+}
+@media (max-width: 768px) {
+  .cardprice {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cardprice .card {
+    max-width: 90%;
+    margin-bottom: 1rem;
+  }
+}
+
+.home {
+  padding: 2rem;
+  background-color: white;
+  text-align: center;
+}
+.home h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.home p {
+  max-width: 600px;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .home {
+    padding: 1rem;
+  }
+}
+
+.productrating .cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+.productrating .cards .card {
+  max-width: 200px;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.productrating .cards .card img {
+  max-width: 100%;
+  height: auto;
+}
+.productrating .cards .card h2 {
+  font-size: 1.2rem;
+}
+.productrating .cards .card p {
+  color: #069308;
+}
+.productrating .cards .card .rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+.productrating .cards .card .rating i {
+  margin: 0 0.2rem;
+}
+@media (max-width: 768px) {
+  .productrating .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .productrating .cards .card {
+    max-width: 90%;
+  }
+}
+
+.footer {
+  background-color: white;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.footer .footerimg img {
+  max-width: 100px;
+}
+.footer .pera,
+.footer .quicklinks,
+.footer .sitelinks,
+.footer .mobileapp {
+  padding: 1rem;
+}
+.footer .pera h1,
+.footer .quicklinks h1,
+.footer .sitelinks h1,
+.footer .mobileapp h1 {
+  margin-bottom: 1rem;
+}
+.footer .pera p,
+.footer .quicklinks p,
+.footer .sitelinks p,
+.footer .mobileapp p {
+  font-size: 0.9rem;
+}
+.footer .pera ul li,
+.footer .quicklinks ul li,
+.footer .sitelinks ul li,
+.footer .mobileapp ul li {
+  margin-bottom: 0.5rem;
+}
+.footer .google img {
+  max-width: 100px;
+}
+@media (max-width: 768px) {
+  .footer {
+    grid-template-columns: 1fr;
+  }
+  .footer .pera,
+  .footer .quicklinks,
+  .footer .sitelinks,
+  .footer .mobileapp {
+    text-align: center;
+  }
+  .footer .google img {
+    margin: 0 auto;
+  }
+}
+
+.copyright {
+  background-color: gray;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+}
+.copyright .social {
+  margin-top: 0.5rem;
+}
+.copyright .social a {
+  margin: 0 0.5rem;
+}
+.copyright .social a i {
+  color: white;
+  font-size: 1.2rem;
+}/*# sourceMappingURL=groceries.css.map */

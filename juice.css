@@ -1,1 +1,234 @@
-/*# sourceMappingURL=juice.css.map */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 30px;
+  background-color: #fff;
+  font-size: larger;
+}
+nav img {
+  height: 80px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+}
+nav ul li a {
+  color: #333;
+  font-weight: bold;
+}
+nav ul li a:hover {
+  color: #069308;
+}
+nav label {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+  background-color: #f7f7f7;
+}
+.filter-container .search-bar {
+  display: flex;
+}
+.filter-container .search-bar input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+}
+.filter-container .search-bar button {
+  padding: 10px 20px;
+  background-color: #069308;
+  border: none;
+  color: #fff;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+.filter-container .search-bar button:hover {
+  background-color: #046205;
+}
+.filter-container .price-filter h2 {
+  margin: 0 0 10px 0;
+}
+.filter-container .price-filter input[type=range] {
+  width: 100%;
+}
+.filter-container .price-filter .price-values {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+.filter-container .categories {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.filter-container .categories a {
+  color: #333;
+  font-weight: bold;
+}
+.filter-container .categories a:hover {
+  color: #069308;
+}
+
+.cardprice, .productrating {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+.cardprice .card, .productrating .card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+}
+.cardprice .card img, .productrating .card img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+.cardprice .card h2, .productrating .card h2 {
+  font-size: 18px;
+  color: #333;
+}
+.cardprice .card p, .productrating .card p {
+  font-size: 16px;
+  font-weight: bold;
+  color: #069308;
+}
+.cardprice .card .rating, .productrating .card .rating {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+.cardprice .card .rating i, .productrating .card .rating i {
+  color: #069308;
+}
+
+.home {
+  padding: 30px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+.home h1, .home h2 {
+  color: #069308;
+}
+.home p {
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 30px;
+  background-color: #333;
+  color: #fff;
+}
+.footer img {
+  max-width: 150px;
+}
+.footer .pera p {
+  line-height: 1.6;
+}
+.footer .quicklinks h1, .footer .sitelinks h1, .footer .mobileapp h1 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #069308;
+}
+.footer .quicklinks ul, .footer .sitelinks ul, .footer .mobileapp ul {
+  list-style: none;
+  padding: 0;
+}
+.footer .quicklinks ul li, .footer .sitelinks ul li, .footer .mobileapp ul li {
+  margin-bottom: 5px;
+}
+.footer .quicklinks ul li a, .footer .sitelinks ul li a, .footer .mobileapp ul li a {
+  color: #fff;
+}
+.footer .quicklinks ul li a:hover, .footer .sitelinks ul li a:hover, .footer .mobileapp ul li a:hover {
+  color: #069308;
+}
+.footer .quicklinks p, .footer .sitelinks p, .footer .mobileapp p {
+  color: #fff;
+  line-height: 1.6;
+}
+.footer .google img {
+  max-width: 100px;
+}
+
+.copyright {
+  background-color: #1a1a1a;
+  text-align: center;
+  padding: 10px;
+}
+.copyright p {
+  margin: 0;
+  color: gray;
+}
+.copyright .social {
+  margin-top: 10px;
+}
+.copyright .social a {
+  margin: 0 5px;
+  font-size: 20px;
+}
+.copyright .social a i {
+  color: gray;
+}
+.copyright .social a i:hover {
+  color: #069308;
+}
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+  nav label {
+    display: block;
+  }
+  #click:checked ~ nav ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 20px;
+    z-index: 1;
+  }
+  #click:checked ~ nav ul li {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  #click:checked ~ nav ul li a {
+    color: #fff;
+  }
+  #click:checked ~ nav ul li a:hover {
+    color: #069308;
+  }
+}/*# sourceMappingURL=juice.css.map */
