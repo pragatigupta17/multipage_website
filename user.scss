@@ -1,3 +1,9 @@
+// .image{
+//     align-items: center;
+//     text-align: center;
+//     position: relative;
+//     left:100px;
+// }
 // Variables
 $background-color: #f3f4f6;
 $form-background: #ffffff;
@@ -23,6 +29,7 @@ body {
     background-color: $background-color;
     color: $text-color;
     padding: 20px;
+
 }
 
 .login-container {
